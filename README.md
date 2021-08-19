@@ -19,8 +19,14 @@ Python 3.9.5
 4. will deploy to 127.0.0.1:5001. If you would like to change the port please adjust the port parameter in the __main__ function of url_shortner.py
 5. Once deployed use your favorite API testing suite to test both the shortening and retrieval features
 
-Example:
+### Endpoints:<br>
+Post: /url_shorten/<br>
+Get: /url/<id><br>
+
+### Post Example:<br>
 127.0.0.1:5001/url_shorten/<br>
 key: url<br>
 value: http:://www.test.com/this/is/a/test
 
+### Get Example:<br>
+127.0.0.1:5001/url/<id>
