@@ -21,7 +21,7 @@ Python 3.9.5
 
 ### Endpoints:<br>
 Post: /url_shorten/<br>
-Get: /url/<id><br>
+Get: /url/\<id\><br>
 
 ### Post Example:<br>
 127.0.0.1:5001/url_shorten/<br>
