@@ -26,7 +26,7 @@ Get: /url/\<id\><br>
 ### Post Example:<br>
 127.0.0.1:5001/url_shorten/<br>
 key: url<br>
-value: http:://www.test.com/this/is/a/test
+value: http://www.test.com/this/is/a/test
 
 ### Get Example:<br>
 assuming an id of 34555 was created
