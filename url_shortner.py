@@ -24,7 +24,7 @@ class UrlGetter(Resource):
     ''' Simple fetch of the normal url '''
 
     def get(self, id):
-        regular_url = url_helper.retrieve_normal_url(id)
+        regular_url = url_helper.retrieve_normal_url(int(id))
         print(regular_url)
         return regular_url
 
@@ -37,13 +37,13 @@ class UrlShortenAndStore(Resource):
         # result_set is a dictonary of id:url
         args = parser.parse_args()
         result_set = url_helper.shorten_url(args['url'])
-        id = next(iter(result_set))
+        id = result_set['id']
         print(id)
         url_helper.store_url(
-            id, result_set[id]['shortened'],
-            result_set[id]['normal']
+            id, result_set['shortened_url'],
+            result_set['normal_url']
         )
-        return f"Successfully stored {result_set[id]} as {id}", 201
+        return f"Successfully stored {result_set['normal_url']} and {result_set['shortened_url']} as {id}", 201
 
 
 api.add_resource(HelloWorld, '/')

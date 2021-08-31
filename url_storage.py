@@ -41,6 +41,8 @@ class UrlUtilites:
         '''
         print(id)
         print(self.url_storage)
+        print(repr(id))
+        print(repr(self.url_storage))
         if self.url_storage.get(id) is not None:
             return self.url_storage[id]['normal_url'], 200
         # if id in self.url_storage.keys():
@@ -56,4 +58,6 @@ class UrlUtilites:
         parsed_url = urlparse(url)
         id = zlib.crc32(url.encode())
         shortened_url = f"{parsed_url.scheme}://{parsed_url.netloc}/{id}"
-        return {id: {'shortened': shortened_url, 'normal': url}}
+        return {'id': id,
+                'shortened_url': shortened_url,
+                'normal_url': url}
